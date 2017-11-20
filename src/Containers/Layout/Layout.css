@@ -1,0 +1,9 @@
+ .articleContainer {
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; */
+  column-width: 300px;
+  column-count: 4;
+  column-rule: 1px solid #eee;
+  column-gap: 20px;
+} 

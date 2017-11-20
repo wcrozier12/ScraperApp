@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import './App.css';
-import Navbar from '../Components/NavBar/Navbar'
+import Classes from './App.css';
+import Layout from './Layout/Layout'
 
 class App extends Component {
   render() {
+    const appStyle=Classes.App;
     return (
-      <div className="App">
-        <Navbar />
+      <div className={appStyle}>
+        <Layout />
       </div>
     );
   }

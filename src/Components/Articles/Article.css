@@ -1,0 +1,15 @@
+.panel {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  box-shadow: 1px 1px #eee;
+}
+
+.panel:hover {
+  transition: transform 0.2s;
+  transform: scale3d(1.006, 1.006, 1);
+}
+ .img {
+  width: 100%;
+  border-radius: 10px;
+}  
