@@ -1,9 +1,10 @@
 import React from 'react';
 import {Button} from 'react-bootstrap';
+import Classes from './Commentbutton.css'
 
 const Commentbutton = (props) => {
   return (
-   <Button>Comment</Button>
+   <Button className={Classes.CommentButton} onClick={props.clicked}>Comment</Button>
   )
 }
 

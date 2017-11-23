@@ -1,8 +1,19 @@
-.h1 {
-  font-size: 48px;
+.navBar {
+  height: 100px;
+  background-color: #922924;
+  padding-left: 0 !important;
+}
+
+.navHeader {
+  font-family: arial,helvetica,sans-serif;
+  color: #ffffff !important;
+  font-size: 36px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  vertical-align: middle;
 }
 
 .a {
-  color:inherit;
+  color:white;
   text-decoration: none;
 }

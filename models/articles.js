@@ -18,6 +18,11 @@ var ArticleSchema = new Schema({
     required: true,
     unique: true
   },
+  desc : {
+    type: String,
+    required: true,
+    unique: true
+  },
   photo: {
     type: String,
     required: true,

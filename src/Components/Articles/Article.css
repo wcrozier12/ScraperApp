@@ -1,15 +1,21 @@
-.panel {
+.Panel {
   text-align: center;
   display: inline-block;
-  width: 100%;
+  width: 95%;
   box-shadow: 1px 1px #eee;
+  font-family: arial,helvetica,sans-serif;
 }
 
-.panel:hover {
+.Panel:hover {
   transition: transform 0.2s;
   transform: scale3d(1.006, 1.006, 1);
 }
- .img {
+.Desc {
+  font-family: arial,helvetica,sans-serif;
+  color: black;
+}
+
+.Image {
   width: 100%;
   border-radius: 10px;
 }  
