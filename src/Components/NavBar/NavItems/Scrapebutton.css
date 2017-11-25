@@ -1,11 +1,11 @@
 .ScrapeButton {
   margin-top: 20px;
   padding: 10px 15px 10px 15px;
-  background-color: #690e09;
+  background-color: #0f5837;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
-  border: 4px double #690e09;
+  border: 4px double #0f5837;
   border-radius: 10px;
   font-family: arial,helvetica,sans-serif;
   color: #ffffff !important;
@@ -13,7 +13,7 @@
 
 .ScrapeButton:hover {
   background: transparent;
-  color: #690e09 !important;
+  color: #0f5837 !important;
 }
 
 .ScrapeButton:focus {

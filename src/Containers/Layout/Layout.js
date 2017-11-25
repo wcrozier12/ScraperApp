@@ -4,10 +4,9 @@ import axios from 'axios';
 import Classes from './Layout.css';
 import Aux from '../../HOCs/Aux'
 import Navigation from '../../Components/NavBar/Navigation';
-import Article from '../../Components/Articles/Article';
+import ArticlePanel from '../../Components/Articles/ArticlePanel/ArticlePanel';
 import Modal from '../../Components/UI/Modal/Modal';
 import ScrapeSummary from '../../Components/NavBar/NavItems/ScrapeSummary/ScrapeSummary';
-import CommentScreen from '../../Components/Comments/CommentScreen';
 
 class Layout extends Component {
   constructor(props) {
@@ -54,24 +53,18 @@ class Layout extends Component {
     this.setState({scraping:false})
   }
 
-  commentClickHandler = () => {
-      this.setState({commenting:true})
-  }
-  closeCommentWindowHandler = () => {
-    this.setState({commenting: false})
-  }
   render() {
     const articles = this.state.articles.map((article, i) => {
-      return <Article 
+      return <ArticlePanel 
       image={article.photo}
       title={article.title} 
       key={article._id} 
       link={article.link}
       desc={article.desc}
+      id={article.id}
       commentOpen={this.commentClickHandler} />
     })
 
-    const containerStyle = Classes.articleContainer;
     return (
       <Aux>
           <section>
@@ -80,10 +73,7 @@ class Layout extends Component {
             <Modal show={this.state.scraping} modalClosed={this.closeScrapeWindowHandler}>
               <ScrapeSummary scrapedArticlesLength={this.state.scrapedArticlesLength} scrapedArticles={this.state.scrapedArticles}/>
             </Modal>
-            <Modal show={this.state.commenting} modalClosed={this.closeCommentWindowHandler}>
-              <CommentScreen />
-            </Modal>
-          <div className={containerStyle}>
+          <div className={Classes.articleContainer}>
             {articles}
           </div>
       </Aux>
