@@ -55,13 +55,17 @@ class Layout extends Component {
 
   render() {
     const articles = this.state.articles.map((article, i) => {
+      if (!article.comments) {
+        article.comments = null;
+      }
       return <ArticlePanel 
       image={article.photo}
       title={article.title} 
       key={article._id} 
       link={article.link}
       desc={article.desc}
-      id={article.id}
+      id={article._id}
+      comments={article.comments}
       commentOpen={this.commentClickHandler} />
     })
 

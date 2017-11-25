@@ -9,7 +9,6 @@ class ArticlePanel extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      comments: [],
       viewingArticle: false
     }
   }
@@ -33,7 +32,7 @@ class ArticlePanel extends Component {
         <p className={Classes.p}> {this.props.title} </p>
       </div>
       <Modal show={this.state.viewingArticle} modalClosed={this.handleArticleWindowClose}>
-        <ArticleScreen id={this.props.id} title={this.props.title} desc={this.props.desc} image={this.props.image} link={this.props.link}/>
+        <ArticleScreen id={this.props.id} title={this.props.title} desc={this.props.desc} image={this.props.image} link={this.props.link} comments={this.props.comments}/>
       </Modal>
     </Aux>
   )

@@ -1,7 +1,8 @@
 import React from 'react';
 import Classes from './ArticleScreen.css';
 import Aux from '../../../HOCs/Aux';
-const CommentScreen = (props) => (
+import NewComment from '../../Comments/NewComment';
+const ArticleScreen = (props) => (
 
   <Aux>
     <div className='row'
@@ -25,13 +26,7 @@ const CommentScreen = (props) => (
     <div className='row'>
      <p className={Classes.p}> {props.desc} </p>
     </div>
-    <form>
-      <label>
-        Comment:
-        <input type="text" name="name" />
-      </label>
-      <input type="submit" value="Submit" />
-    </form>
+    <NewComment articleId={props.id} comments={props.comments} />
   </Aux>
 )
-export default CommentScreen;
+export default ArticleScreen;

@@ -35,6 +35,15 @@
   text-align: left;
 }
 
+.Form {
+  text-align:left;
+}
+.Input {
+  border-radius: 5px;
+  margin: 10px;
+  outline:none;
+}
+
 @media (max-width: 990px) {
     .Image {
       border-radius: 10px 10px 0 0;

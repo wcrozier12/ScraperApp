@@ -9,6 +9,7 @@ router.get('/api/articles', function(req, res) {
   db.articles
   .find({})
   .sort({_id: -1})
+  .populate('comments')
   .then((data) => {
     res.json(data);
   })
@@ -57,5 +58,16 @@ router.get("/scrape", function(req, res) {
       return res.json('All done');
   });
 });
+
+router.post('/newComment/:id', ((req, res) =>  {
+  db.comments
+  .create(req.body)
+  .then((dbComment) => {
+      return db.articles.findOneAndUpdate({_id: req.params.id}, { $push: { comments: req.body} }, { new: true });
+  })
+  .then((result) => {
+    res.json(result)
+  })
+}))
 
 module.exports = router;
