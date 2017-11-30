@@ -13,7 +13,7 @@ const cheerio = require("cheerio");
 
 // Require all models
 const db = require("./models");
-const PORT = 3001;
+let PORT = process.env.PORT || 3001;
 // Initialize Express
 const app = express();
 // Configure middleware
