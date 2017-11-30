@@ -11,14 +11,14 @@ var CommentSchema = new Schema({
     type: String,
     required: true
   },
-  articleId: {
-    type:String,
-    required:true
+  postedAt: {
+    type: Date,
+    default: Date.now
   }
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var Comment = mongoose.model("Comment", CommentSchema);
+var Comment = mongoose.model("Comments", CommentSchema);
 
 // Export the Note model
 module.exports = Comment;

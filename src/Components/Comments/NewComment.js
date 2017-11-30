@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Button} from 'react-bootstrap';
-import Classes from './Commentbutton.css';
+import Classes from './NewComment.css';
 import Aux from '../../HOCs/Aux';
 import Comment from './Comment';
 
@@ -15,14 +14,13 @@ class NewComment extends Component {
   }
   postDataHandler = () => {
     const data = {
-      content: this.state.content,
-      articleId: this.props.articleId
+      content: this.state.content
     }
-    console.log(data);
     axios.post('/newComment/' + this.props.articleId, data)
     .then((response) => {
-      const comments=[...this.state.comments, data];
-      this.setState({comments: comments})
+      const newComment= response.data;
+      const comments=[...this.state.comments, newComment];
+      this.setState({content: '', comments: comments})
     })
   }
   render() {
@@ -31,6 +29,7 @@ class NewComment extends Component {
      comments = this.state.comments.map((comment, i) => {
       return <Comment 
               content={comment.content}
+              postedAt={comment.postedAt}
               key={comment._id} />
     })
     }
@@ -40,14 +39,14 @@ class NewComment extends Component {
       {comments}
     <div className='row'>
       <div className='col-md-12'>
-        <div className="form-group">
-          <textarea className="form-control" value={this.state.content} onChange={(event) => this.setState({content: event.target.value})} rows="3"></textarea>
+        <div>
+          <textarea className={Classes.CommentBox} placeholder="Comment.." value={this.state.content} onChange={(event) => this.setState({content: event.target.value})} rows="3"></textarea>
         </div>
       </div>
     </div>
     <div className='row'>
-      <div className='col-md-3'>
-        <button type="button" className="btn btn-info btn-sm" onClick={this.postDataHandler}>Comment</button>
+      <div className='col-md-3' style={{textAlign:'left'}}>
+        <button type="button" className="btn btn-sm" style={{marginBottom:'10px', marginLeft: '25px', backgroundColor:'#277552', color:'#ffffff'}}onClick={this.postDataHandler}>Comment</button>
       </div>
     </div>
   </Aux>

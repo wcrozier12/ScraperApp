@@ -11,7 +11,7 @@ const modal = (props) => {
       className={classes.Modal}
       style={{
         transform: props.show ? 'scale(1)' : 'scale(0)',
-        opacity: props.show ? '1': '0'
+        opacity: props.show ? '1': '0',
       }}>
       {props.children}
     </div>

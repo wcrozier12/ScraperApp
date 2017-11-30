@@ -1,18 +1,19 @@
 import React from 'react';
 import Aux from '../../../../HOCs/Aux';
+import Classes from './ScrapeSummary.css';
 
 const scrapeSummary = (props) => {
   if (props.scrapedArticlesLength !== 0) {
     return (
     <Aux>
-      <p>Added {props.scrapedArticlesLength} articles, enjoy!</p>
+      <p className={Classes.ScrapeMessage}>Added {props.scrapedArticlesLength} articles, enjoy!</p>
     </Aux>
     )
   }
   else {
   return (
     <Aux>
-      <p> There are no new articles. Try back tomorrow. </p>
+      <p className={Classes.ScrapeMessage}> There are no new articles. Try back tomorrow. </p>
     </Aux>
   )
   }

@@ -40,8 +40,6 @@ class Layout extends Component {
           .then((result) => {
             return axios.get('/api/articles')
             .then((result) => {
-            console.log(this.state.articles.length);
-            console.log(result.data.length);
             const numberOfScraped = result.data.length - this.state.articles.length;
             const articles =result.data;
             return this.setState({scraping:true, scrapedArticlesLength: numberOfScraped, articles: articles});

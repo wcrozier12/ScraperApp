@@ -8,8 +8,8 @@ const db = require("../../models");
 router.get('/api/articles', function(req, res) { 
   db.articles
   .find({})
-  .sort({_id: -1})
   .populate('comments')
+  .sort({_id: -1})
   .then((data) => {
     res.json(data);
   })
@@ -63,10 +63,14 @@ router.post('/newComment/:id', ((req, res) =>  {
   db.comments
   .create(req.body)
   .then((dbComment) => {
-      return db.articles.findOneAndUpdate({_id: req.params.id}, { $push: { comments: req.body} }, { new: true });
+      res.json(dbComment);
+      return db.articles.findOneAndUpdate({_id: req.params.id}, { $push: { comments: dbComment} }, { new: true });
   })
   .then((result) => {
-    res.json(result)
+    console.log(result)
+  })
+  .catch((err) => {
+    console.log(err)
   })
 }))
 

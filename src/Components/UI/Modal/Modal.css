@@ -14,9 +14,9 @@
 
 @media (min-width: 748px) {
     .Modal {
-        top: 20%;
-        width: 750px;
-        left: calc(50% - 375px);
+        top: 10%;
+        width: 900px;
+        left: calc(50% - 450px);
     }
 }
 
