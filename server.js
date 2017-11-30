@@ -51,7 +51,7 @@ app.use(function(req, res, next) {
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
-mongoose.connect('mongodb://heroku_gpbl7ppr:nufd9pnvd05strk1v7lu461t5f@ds125146.mlab.com:25146/heroku_gpbl7ppr', {
+mongoose.connect(MONGODB_URI, {
   useMongoClient: true
 });
 
