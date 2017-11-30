@@ -57,6 +57,8 @@ mongoose.connect('mongodb://heroku_gpbl7ppr:nufd9pnvd05strk1v7lu461t5f@ds125146.
 
 app.use('/', routes);
 
+console.log('server started');
+
 // Listen on port 3001
 app.listen(PORT, function() {
   console.log("App running on port " + PORT);
