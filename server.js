@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // Use express.static to serve the public folder as a static directory
-app.use(express.static("public"));
+app.use(express.static("build"));
 
 app.use(function(req, res, next) {
   // Website you wish to allow to connect
